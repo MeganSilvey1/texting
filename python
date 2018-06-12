@@ -1,0 +1,16 @@
+from twilio.rest import Client
+
+# My Account SID from twilio.com/console
+account_sid = "AC2b4974361758607df78653770610b19a"
+# my Auth Token from twilio.com/console
+auth_token  = "4ca9c2440db31ad92e996826f4d3cd48"
+
+client = Client(account_sid, auth_token)
+
+#Sending Message to phone number with stars used for privacy
+message = client.messages.create(
+    to="+1913237****",
+    from_="+1626507****",
+    body="Reminder: Make sure to smile and laugh hard.")
+
+print(message.sid)
